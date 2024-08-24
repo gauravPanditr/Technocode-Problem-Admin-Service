@@ -1,10 +1,11 @@
-class BaseError extends Error{
-      constructor(name,statusCode,description,details){
+class BaseError extends Error {
+
+      constructor(name, statusCode, description, details) {
             super(description);
-            this.name=name;
-            this.statusCode=statusCode;
-            this.details=details;
+            this.name = name;
+            this.statusCode = statusCode;
+            this.details = details;
       }
 }
 
-module.exports=BaseError;
+module.exports = BaseError;
