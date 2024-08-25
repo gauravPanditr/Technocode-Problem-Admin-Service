@@ -27,8 +27,22 @@ async function  deleteProblem(req,res) {
       
 }
 
-async function getProblems(req,req) {
-      
+async function getProblems(req,res,next) {
+      try {
+            
+            const getAllProblem = await problemService.getAllProblems();
+            
+            
+            return res.status(StatusCodes.OK).json({
+                success: true,
+                message: 'Successfully created a new problem',
+                error: {},
+                data: getAllProblem
+            })
+        } catch(error) {
+            next(error);
+        }
+          
 }
 
 

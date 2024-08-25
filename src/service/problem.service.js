@@ -13,7 +13,10 @@ constructor(problemRepositary){
      const problem=this.problemRepositary.createProblem(problemData);
      return problem; 
  }
-
+  async getAllProblems(){
+      const problem=this.problemRepositary.getAllProblem();
+      return problem;
+  }
 
 }
 module.exports=ProbemService;
