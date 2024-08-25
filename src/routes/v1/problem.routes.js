@@ -8,7 +8,7 @@ const { ProblemController } = require('../../controller');
 
 problemroutes.get('/:id', ProblemController.getProblem);
 
-problemroutes.post('/', ProblemController.pingController);
+problemroutes.post('/', ProblemController.addProblem);
 
 problemroutes.get('/', ProblemController.getProblems);
 

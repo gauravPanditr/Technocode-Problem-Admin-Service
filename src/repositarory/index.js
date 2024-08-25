@@ -1,3 +1,3 @@
 module.exports={
-      ProblemRepositary:require('./problem.repositary')
+      ProblemRepository:require('./problem.repositary')
 }
