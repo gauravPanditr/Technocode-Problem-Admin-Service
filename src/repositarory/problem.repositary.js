@@ -27,6 +27,30 @@ class ProblemRepository{
       }
   }
 
+   async getProblemById(id){
+      try{
+            const getProblem=await Problem.findById(id);
+            return getProblem;
+
+      }catch(error){
+            console.log(error);
+            
+      }
+   }
+   
+   async deleteProblemById(id){
+      try{
+            const deleteProblem=await Problem.findByIdAndDelete(id);
+            return deleteProblem;
+
+      }
+      catch(error){
+            console.log(error);
+            
+      }
+   }
+
+
 
 
 }

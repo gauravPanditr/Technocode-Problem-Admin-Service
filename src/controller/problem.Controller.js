@@ -23,8 +23,28 @@ async function addProblem(req, res, next) {
 }  
 
 
-async function  deleteProblem(req,res) {
-      
+async function  deleteProblemById(req,res) {
+      try{
+        const id=req.params.id;
+        const problem=await problemService.deleteProblemById(id);
+        if(!problem){
+            return res.status(StatusCodes.NOT_FOUND).json({
+                success:false,
+                message:'Problem not Found',
+                 
+            })
+        }
+           else{
+            return res.status.status(StatusCodes.OK).json({
+                success:true,
+                message:'Problem Found',
+                error:{},
+                data:problem
+            })
+           }
+      }catch(error){
+        next(error);
+      }
 }
 
 async function getProblems(req,res,next) {
@@ -46,8 +66,21 @@ async function getProblems(req,res,next) {
 }
 
 
-async function getProblem(req,res) {
-      
+async function getProblemById(req,res) {
+     try{
+        const id=req.params.id;
+        const problem=await problemService.getProblemById(id);
+         return res.status(StatusCodes.OK).json({
+             success:true,
+             message:'Problem Found',
+             error:{},
+             data:problem
+         })
+     }  catch(error){
+        next(error);
+     }
+
+
 }
 
 async function  updateProblem(req,res) {
@@ -57,7 +90,7 @@ async function  updateProblem(req,res) {
 
 module.exports={
       addProblem,
-      deleteProblem,
+      deleteProblemById,
       getProblem,
       getProblems,
       updateProblem,
