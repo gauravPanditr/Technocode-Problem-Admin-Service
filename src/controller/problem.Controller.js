@@ -91,7 +91,7 @@ async function  updateProblem(req,res) {
 module.exports={
       addProblem,
       deleteProblemById,
-      getProblem,
+      getProblemById,
       getProblems,
       updateProblem,
       

@@ -6,15 +6,15 @@ const problemroutes = express.Router();
 const { ProblemController } = require('../../controller');
 
 
-problemroutes.get('/:id', ProblemController.getProblem);
+problemroutes.get('/:id', ProblemController.getProblemById);
 
 problemroutes.post('/', ProblemController.addProblem);
 
 problemroutes.get('/', ProblemController.getProblems);
 
-problemroutes.put('/:id', ProblemController.updateProblem);
+//problemroutes.put('/:id', ProblemController.updateProblem);
 
-problemroutes.delete('/:id', ProblemController.deleteProblem);
+problemroutes.delete('/:id', ProblemController.deleteProblemById);
 
 
 
